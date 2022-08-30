@@ -1,3 +1,0 @@
-policies:
-  - name: cory-test-policy
-    resource: aws.ec2
