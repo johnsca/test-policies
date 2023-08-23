@@ -2,21 +2,26 @@ policies:
   - name: user-login-detected
     resource: account
     description: |
-      Notifies Security and Cloud Admins teams on any AWS root user console logins
+      Notifies Security and Cloud Admins teams on any AWS user console logins
     mode:
        type: cloudtrail
        events:
           - ConsoleLogin
     actions:
       - type: notify
-        template: slack.html
-        priority_header: 1
-        violation_desc: "A User Has Logged Into the AWS Console"
-        action_desc: |
-            Please investigate and if needed revoke the root users session along
-            with any other restrictive actions if it's an unapproved root login
+        template: slack.j2
         to:
           - slack://event-owner
+        transport:
+          type: sqs
+          queue: arn:aws:sqs:us-east-2:880584957794:dev-stacklet-commshub-messages
+  - name: cory-sqs-test
+    resource: sqs
+    actions:
+      - type: notify
+        template: slack.j2
+        to:
+          - slack://resource-owner
         transport:
           type: sqs
           queue: arn:aws:sqs:us-east-2:880584957794:dev-stacklet-commshub-messages
