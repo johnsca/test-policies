@@ -15,7 +15,8 @@ policies:
         action_desc: |
             Please investigate and if needed revoke the root users session along
             with any other restrictive actions if it's an unapproved root login
-        to: - slack://event-owner
+        to:
+          - slack://event-owner
         transport:
           type: sqs
           queue: arn:aws:sqs:us-east-2:880584957794:dev-stacklet-commshub-messages
