@@ -17,6 +17,8 @@ policies:
           queue: arn:aws:sqs:us-east-2:880584957794:dev-stacklet-commshub-messages
   - name: cory-sqs-test
     resource: sqs
+    filters:
+      - QueueName: test-queue
     actions:
       - type: notify
         template: slack.j2
