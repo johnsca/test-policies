@@ -21,8 +21,10 @@ policies:
       - QueueName: test-queue
     actions:
       - type: notify
-        template: slack.j2
+        slack_msg_color: danger
+        slack_template: slack.j2
         to:
+          - slack://cory@stacklet.io
           - slack://resource-owner
         transport:
           type: sqs
