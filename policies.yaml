@@ -28,4 +28,4 @@ policies:
           - slack://resource-owner
         transport:
           type: sqs
-          queue: arn:aws:sqs:us-east-2:880584957794:dev-stacklet-commshub-messages
+          queue: https://sqs.us-east-2.amazonaws.com/880584957794/dev-stacklet-commshub-messages
