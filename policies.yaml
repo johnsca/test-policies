@@ -15,17 +15,7 @@ policies:
         transport:
           type: sqs
           queue: arn:aws:sqs:us-east-2:880584957794:dev-stacklet-commshub-messages
-  - name: cory-sqs-test
+  - name: cory-sqs-missing-tag-bar
     resource: sqs
     filters:
-      - QueueName: test-queue
-    actions:
-      - type: notify
-        slack_msg_color: danger
-        slack_template: slack.j2
-        to:
-          - slack://cory@stacklet.io
-          - slack://resource-owner
-        transport:
-          type: sqs
-          queue: https://sqs.us-east-2.amazonaws.com/880584957794/dev-stacklet-commshub-messages
+      - "tag:Bar": absent
