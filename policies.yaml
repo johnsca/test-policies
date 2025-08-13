@@ -19,3 +19,18 @@ policies:
     resource: sqs
     filters:
       - "tag:Bar": absent
+  - name: sqs-deny-insecure-traffic
+    resource: aws.sqs
+    description: |
+      This policy identifies SQS queues that do not have a DenyInSecureTraffic statement in their policy.
+    mode:
+      type: pull
+    filters:
+      - not:
+        - type: has-statement
+          statements:
+            - Effect: Deny
+              Action: "sqs:*"
+              Condition:
+                Bool:
+                  "aws:SecureTransport": "false"
