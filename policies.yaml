@@ -34,3 +34,18 @@ policies:
               Condition:
                 Bool:
                   "aws:SecureTransport": "false"
+  - name: sqs-test-policy
+    resource: aws.sqs
+    description: |
+      This policy identifies SQS queues that do not have a test statement in their policy
+    mode:
+      type: pull
+    filters:
+      - not:
+        - type: has-statement
+          statements:
+            - Effect: Allow
+              Action: "sqs:*"
+              Condition:
+                Bool:
+                  "aws:PrincipalOrgID": "o-does-not-exist"
