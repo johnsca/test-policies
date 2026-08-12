@@ -49,3 +49,90 @@ policies:
               Condition:
                 Bool:
                   "aws:PrincipalOrgID": "o-does-not-exist"
+  - name: cory-indexed-test-01
+    <<: &trivial
+      resource: aws.sqs
+      description: |
+        Trivial indexed test policy.
+      mode:
+        type: pull
+      filters:
+        - "tag:CoryIndexedTest": absent
+  - name: cory-indexed-test-02
+    <<: *trivial
+  - name: cory-indexed-test-03
+    <<: *trivial
+  - name: cory-indexed-test-04
+    <<: *trivial
+  - name: cory-indexed-test-05
+    <<: *trivial
+  - name: cory-indexed-test-06
+    <<: *trivial
+  - name: cory-indexed-test-07
+    <<: *trivial
+  - name: cory-indexed-test-08
+    <<: *trivial
+  - name: cory-indexed-test-09
+    <<: *trivial
+  - name: cory-indexed-test-10
+    <<: *trivial
+  - name: cory-indexed-test-11
+    <<: *trivial
+  - name: cory-indexed-test-12
+    <<: *trivial
+  - name: cory-indexed-test-13
+    <<: *trivial
+  - name: cory-indexed-test-14
+    <<: *trivial
+  - name: cory-indexed-test-15
+    <<: *trivial
+  - name: cory-indexed-test-16
+    <<: *trivial
+  - name: cory-indexed-test-17
+    <<: *trivial
+  - name: cory-indexed-test-18
+    <<: *trivial
+  - name: cory-indexed-test-19
+    <<: *trivial
+  - name: cory-indexed-test-20
+    <<: *trivial
+  - name: cory-indexed-test-21
+    <<: *trivial
+  - name: cory-indexed-test-22
+    <<: *trivial
+  - name: cory-indexed-test-23
+    <<: *trivial
+  - name: cory-indexed-test-24
+    <<: *trivial
+  - name: cory-indexed-test-25
+    <<: *trivial
+  - name: cory-indexed-test-26
+    <<: *trivial
+  - name: cory-indexed-test-27
+    <<: *trivial
+  - name: cory-indexed-test-28
+    <<: *trivial
+  - name: cory-indexed-test-29
+    <<: *trivial
+  - name: cory-indexed-test-30
+    <<: *trivial
+  - name: cory-indexed-test-31
+    <<: *trivial
+  - name: cory-indexed-test-32
+    <<: *trivial
+  - name: cory-indexed-test-33
+    <<: *trivial
+  - name: cory-indexed-test-34
+    <<: *trivial
+  - name: cory-indexed-test-35
+    <<: *trivial
+  - name: cory-indexed-test-36
+    <<: *trivial
+  - name: cory-indexed-test-37
+    <<: *trivial
+  - name: cory-indexed-test-38
+    <<: *trivial
+  - name: cory-indexed-test-39
+    <<: *trivial
+  - name: cory-indexed-test-40
+    <<: *trivial
