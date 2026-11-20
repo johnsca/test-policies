@@ -56,5 +56,5 @@ policies:
     mode:
       type: azure-event-grid
       events:
-        - resourceProvider: Microsoft.Resources/subscriptions/resourceGroups
+        - resourceProvider: Microsoft.Resources/subscriptions/resourcegroups
           event: write
