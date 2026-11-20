@@ -376,3 +376,12 @@ policies:
     <<: *trivial
   - name: cory-indexed-test-160
     <<: *trivial
+  - name: cory-azure-relay-event-test
+    resource: azure.resourcegroup
+    description: |
+      Event-mode policy for verifying that Azure events reach Stacklet through the relay.
+    mode:
+      type: azure-event-grid
+      events:
+        - resourceProvider: Microsoft.Resources/subscriptions/resourceGroups
+          event: write
